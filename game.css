@@ -1,0 +1,336 @@
+@font-face { font-family: montserrat; 
+  src: url('/fonts/Montserrat.ttf'); 
+} 
+
+*{
+  --typed:#FABEA7;
+  --dark:#141b1e;
+  color: white;
+  margin: 0;
+}
+body{
+  background: var(--dark);
+  display: flex;
+  overflow-y: hidden;
+  font-family: montserrat;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 10px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: grey; 
+  border-radius: 5px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #b30000; 
+}
+
+
+
+
+
+.Main{
+  background: black;
+  background-image: url(/images/starsWallpaper.jpg);
+  position: absolute;
+  height: 100vh;
+  width: 700px;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+
+
+
+
+
+
+
+.tracks{
+
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0cm;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.track{
+  padding-right: 10px;
+  background:transparent;
+  display:flex;
+  transform: translateY(-50%);
+  /* position: absolute;
+  top:50%;
+  width: 100%; */
+  justify-content: right;
+}
+
+.bullet{
+  margin-top: -2px;
+  width: 15px;
+  color: black;
+  height: 0px;
+  background: rgb(255, 196, 0);
+  caret-color: transparent;
+  border: none;
+  outline: none;
+  transition: transform 0s linear;
+}
+.bullet:focus{
+  transform:translateX(-3300%);
+  transition: transform 7s linear;
+}
+
+
+/* .track2{
+  background: blue;
+  display: flex;
+  justify-content: right;
+}
+.bullet2{
+  transition: transform 0s linear;
+}
+.bullet2:focus{
+  transform:translateX(-250%);
+  transition: transform 10s linear;
+}
+
+.track3{
+  background: blue;
+  display: flex;
+  justify-content: right;
+}
+.bullet3{
+  transition: transform 0s linear;
+}
+.bullet3:focus{
+  transform:translateX(-250%);
+  transition: transform 10s linear;
+}
+.track4{
+  background: blue;
+  display: flex;
+  justify-content: right;
+}
+.bullet4{
+  transition: transform 0s linear;
+}
+.bullet4:focus{
+  transform:translateX(-250%);
+  transition: transform 10s linear;
+}
+
+
+.track5{
+  background: blue;
+  display: flex;
+  justify-content: right;
+}
+.bullet5{
+  transition: transform 0s linear;
+}
+.bullet5:focus{
+  transform:translateX(-250%);
+  transition: transform 10s linear;
+} */
+
+
+.earthcontainer{
+  width: 25%;
+  height: 25%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-left: 25px;
+  /* bottom: 0;
+  top: 0;
+  margin-left: 100px;
+  margin: auto; */
+  background: green;
+  border-radius: 50%;
+}
+.earth{
+  width:100%;
+  height: 100%;
+  background-image: url(images/earthmap.jpg);
+  border-radius: 50%;
+  background-size: cover;
+  box-shadow: -20px -20px 50px 2px #000 inset, 0 0 20px 2px #000;
+  animation:spin 60s ease-in-out alternate infinite;
+}
+@keyframes spin{
+  100%{background-position:100%;}
+}
+.reference{
+  opacity: 0;
+  color: blue;
+  position: relative;
+  left: 88%;
+  top: -55%;
+  z-index: 2;
+}
+.destroyed{
+  width: 250px;
+  height: 250px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(/images/explosion.png);
+  top: 50%;
+  left:-15px;
+  transform: translateY(-50%);
+  position:absolute;
+  animation: fadeIn 3s; 
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+
+
+
+img.spaceship{
+  padding-right: 10px;
+  height: 40px;
+  width: 40px;
+  margin-top: 0;
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  right: 0;
+  margin: auto;
+}
+
+
+
+.buttondiv{
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+/* CSS */
+.button {
+  align-items: center;
+  appearance: none;
+  background-color: #FCFCFD;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395A;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+.button:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+.button:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(0px);
+}
+.button:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(3px);
+}
+
+
+
+
+
+
+
+.instructions{
+  background: rgb(0, 0, 0);
+  width: 300px;
+  margin-left:720px;
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
+}
+.instructions h3{
+  font-size: 1rem;
+  padding-bottom: 5px;
+}
+.remember{
+  color: #ff0000;
+  background: black;
+  width: 300px;
+  margin-left:720px;
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
+}
+
+
+.line1{
+  padding: 0.9rem;
+  border-radius: 10px;
+  font-size: 1.9rem;
+  background:black;
+  margin-left: 720px;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+
+.word #current-word{
+  margin-top: 0.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: var(--typed);
+}
+.gameover{
+  text-align: center;
+}
+.timescore{
+  text-align: center;
+  margin-top: 0.5rem;
+}
+.compared{
+  margin-top: 0.5rem;
+  text-align: center;
+  color: greenyellow;
+}
+.highscore{
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  border-radius: 10px;
+  position: absolute;
+  background: black;
+  margin-left:720px;
+  width: 150px;
+  padding: 1rem;
+}
